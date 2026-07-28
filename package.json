@@ -1,0 +1,29 @@
+{
+  "name": "USCities Microservices",
+  "version": "1.0.0",
+  "description": "USCities Microservices - EECE/CS 3093C - Lab 4",
+  "keywords": [
+    "Node.js",
+    "Express"
+  ],
+      "homepage": "https://github.com/Braden-Preston-dev/uscities-microservices#readme",
+      "bugs": {
+    "url": "https://github.com/Braden-Preston-dev/uscities-microservices/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Braden-Preston-dev/uscities-microservices.git"
+  },
+  "license": "ISC",
+  "author": "Braden Preston",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongodb": "^7.4.0"
+  }
+}
