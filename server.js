@@ -42,6 +42,14 @@ app.get('/', (req, res) => {
   res.send('USCities-Microservices Gateway by Braden Preston');
 })
 
+app.get('/index.html', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
+
+app.get('/client.js', (req, res) => {
+  res.sendFile(__dirname + '/client.js');
+});
+
 app.get('/echo/:input', function (req, res) {
   var input = req.params.input;
   res.send(input);
