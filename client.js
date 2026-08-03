@@ -1,4 +1,5 @@
 const BASE_URL = 'https://braden-preston-dev-uscities-microservices-haaxd4g4g0bwcbb7.canadacentral-01.azurewebsites.net';
+const API_BASE_URL = getApiBaseUrl();
 
 const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
@@ -48,7 +49,7 @@ async function search(searchId) {
 
   try {
     const response = await fetch(
-      `${BASE_URL}/uscities-search/${encodeURIComponent(query)}`
+      `${API_BASE_URL}/uscities-search/${encodeURIComponent(query)}`
     );
 
     if (!response.ok) {
@@ -74,6 +75,20 @@ async function search(searchId) {
     console.log(`Debug>search error: ${err.message}`);
     responsesElm.textContent = 'Error: could not load results.';
   }
+}
+
+function getApiBaseUrl() {
+  const localHosts = ['localhost', '127.0.0.1'];
+
+  if (window.location.protocol === 'file:') {
+    return 'http://localhost:8080';
+  }
+
+  if (localHosts.includes(window.location.hostname)) {
+    return window.location.origin;
+  }
+
+  return BASE_URL;
 }
 
 function displaySearch(data) {
